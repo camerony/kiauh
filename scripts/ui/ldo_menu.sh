@@ -481,6 +481,7 @@ function rotatescreen() {
 }
 
 function buzz_steppers() {
+  echo "FIRMWARE_RESTART" >> ~/printer_data/comms/klippy.serial
   echo "STEPPER_BUZZ STEPPER=stepper_x" >> ~/printer_data/comms/klippy.serial
 }
 
