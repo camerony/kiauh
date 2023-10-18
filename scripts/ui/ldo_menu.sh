@@ -282,7 +282,7 @@ function select_printer_cfg() {
   ### list all mcus
   for config in "${configs[@]}"; do
     i=$(( i + 1 ))
-    echo -e "${i})PATH: ${cyan}${config}${white}"
+    echo -e "${i}) PATH: ${cyan}${config}${white}"
   done
 
   ### verify user input
@@ -400,7 +400,7 @@ function select_mcu_id_ldo() {
   for mcu in "${mcu_list[@]}"; do
     i=$(( i + 1 ))
     mcu=$(echo "${mcu}" | rev | cut -d"/" -f1 | rev)
-    echo -e "${i})MCU: ${cyan}${mcu}${white}"
+    echo -e "${i}) MCU: ${cyan}${mcu}${white}"
   done
 
   ### verify user input
