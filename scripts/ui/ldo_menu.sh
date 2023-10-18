@@ -25,6 +25,7 @@ function ldosetup_ui() {
   echo -e "|                                                       |"
   echo -e "|  5) [Rotate Screen (BTT/Waveshare)]                   |"
   echo -e "|  6) [Remove LDO Configs]                              |"
+  echo -e "|  7) [Buzz Steppers]                                   |"
   quit_footer
 }
 
@@ -77,6 +78,10 @@ function ldo_menu() {
       6)
         clear && print_header
         remove_ldoconfig
+        ldosetup_ui;;
+      7)
+        clear && print_header
+        buzz_steppers
         ldosetup_ui;;
       Q|q)
         echo -e "${green}###### Happy printing! ######${white}"; echo
@@ -473,6 +478,10 @@ function rotatescreen() {
         error_msg "Invalid command!";;
     esac
   done
+}
+
+function buzz_steppers() {
+  echo "STEPPER_BUZZ STEPPER=stepper_x" >> ~/printer_data/comms/klippy.serial
 }
 
 #===================================================#
