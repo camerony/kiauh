@@ -17,6 +17,7 @@ KIAUH_SRCDIR="$(dirname -- "$(readlink -f "${BASH_SOURCE[0]}")")"
 for script in "${KIAUH_SRCDIR}/scripts/"*.sh; do . "${script}"; done
 for script in "${KIAUH_SRCDIR}/scripts/ui/"*.sh; do . "${script}"; done
 
+
 check_euid
 init_logfile
 set_globals
